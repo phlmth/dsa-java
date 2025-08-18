@@ -1,4 +1,4 @@
-package main.java;
+package main.java.nonlinear;
 
 import java.util.LinkedList;
 

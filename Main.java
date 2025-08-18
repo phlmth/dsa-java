@@ -1,5 +1,7 @@
 package main.java;
 
+import main.java.nonlinear.Tree;
+
 public class Main {
     public static void main(String[] args) {
         Tree tree = new Tree();

@@ -1,6 +1,4 @@
-package main.java;
-
-import java.security.InvalidParameterException;
+package main.java.linear;
 
 public class Array {
     private int[] items;

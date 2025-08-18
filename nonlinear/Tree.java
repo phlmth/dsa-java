@@ -1,4 +1,4 @@
-package main.java;
+package main.java.nonlinear;
 
 import java.util.ArrayList;
 
@@ -97,6 +97,15 @@ public class Tree {
         getNodeAtDistance(root, distance, list);
         return list;
     }
+
+    public void traverseLevelOrder() {
+        for (var i = 0; i <= height(); i++) {
+            for (var value : getNodeAtDistance(i)) {
+                System.out.println(value);
+            }
+        }
+    }
+
 
     private void getNodeAtDistance(Node root, int distance, ArrayList<Integer> list) {
         if (root == null){

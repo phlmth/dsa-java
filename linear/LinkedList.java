@@ -1,4 +1,4 @@
-package main.java;
+package main.java.linear;
 
 import java.util.NoSuchElementException;
 
