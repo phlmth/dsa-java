@@ -12,7 +12,7 @@ public class Tree {
     }
 
     private Node root;
-
+    private int distance;
     public void insert(int value) {
         var node = new Node(value);
         if (root == null) {
@@ -47,7 +47,6 @@ public class Tree {
         }
         return false;
     }
-
 
     public void traversePreOrder() {
         traversePreOrder(root);
@@ -91,6 +90,23 @@ public class Tree {
                 && isBinarySearchTree(root.rightChild, root.value + 1, max);
     }
 
+    public void printNodeAtDistance(int distance) {
+        printNodeAtDistance(root, distance);
+    }
+
+    private void printNodeAtDistance(Node root, int distance) {
+        if (root == null){
+            return;
+        }
+
+        if (distance == 0) {
+            System.out.println(root.value);
+            return;
+        }
+        printNodeAtDistance(root.leftChild, distance - 1);
+        printNodeAtDistance(root.rightChild, distance - 1);
+
+    }
     private boolean equals(Node first, Node second) {
         if (first == null && second == null) {
             return true;
