@@ -1,5 +1,7 @@
 package main.java;
 
+import java.util.ArrayList;
+
 public class Tree {
     private class Node {
         private int value;
@@ -90,21 +92,23 @@ public class Tree {
                 && isBinarySearchTree(root.rightChild, root.value + 1, max);
     }
 
-    public void printNodeAtDistance(int distance) {
-        printNodeAtDistance(root, distance);
+    public ArrayList<Integer> getNodeAtDistance(int distance) {
+        var list = new ArrayList<Integer>();
+        getNodeAtDistance(root, distance, list);
+        return list;
     }
 
-    private void printNodeAtDistance(Node root, int distance) {
+    private void getNodeAtDistance(Node root, int distance, ArrayList<Integer> list) {
         if (root == null){
             return;
         }
 
         if (distance == 0) {
-            System.out.println(root.value);
+            list.add(root.value);
             return;
         }
-        printNodeAtDistance(root.leftChild, distance - 1);
-        printNodeAtDistance(root.rightChild, distance - 1);
+        getNodeAtDistance(root.leftChild, distance - 1, list);
+        getNodeAtDistance(root.rightChild, distance - 1, list);
 
     }
     private boolean equals(Node first, Node second) {
