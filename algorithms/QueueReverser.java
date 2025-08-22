@@ -1,4 +1,4 @@
-package main.java.linear;
+package main.java.algorithms;
 
 import java.util.Queue;
 import java.util.Stack;
